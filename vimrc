@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dracula/vim',{'name':'dracula'}
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'craigemery/vim-autotag'
 call vundle#end()
 filetype plugin indent on
 
@@ -16,10 +17,20 @@ filetype plugin indent on
 syntax on
 colorscheme dracula
 " set term=screen-256color
-" Key Binds "
-inore jk <ESC>
-let mapleader=" "
 " Formatting Stuff
 set number
 set ruler
 set foldmethod=syntax
+set hlsearch
+
+" Tab/spacing stuff
+set expandtab " 2 spaces everytime tab is pressed
+set tabstop=2 " tabs are displayed as 2 spaces
+set softtabstop=2
+set shiftwidth=2 " how much to indent when indenting due to code etc.
+
+"======Key Binds======="
+inore jk <ESC>
+let mapleader=" "
+""YCM keybinds""
+map <F9> :YcmCompleter FixIt<CR>
